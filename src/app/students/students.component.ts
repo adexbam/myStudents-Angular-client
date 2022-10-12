@@ -9,10 +9,12 @@ import { StudentsService } from './students.service';
 export class StudentsComponent implements OnInit {
   students;
   dataSource;
+  average;
   
   constructor(service: StudentsService) {
     this.students = service.loadAllStudents();
     this.dataSource = this.students;
+    this.average = service.averageAge();
   }
 
   displayedColumns = ['id', 'name', 'age', 'class', 'email'];

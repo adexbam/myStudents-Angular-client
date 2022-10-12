@@ -239,5 +239,19 @@ export class StudentsService {
   loadAllStudents(){
     return studentsList;
   }
+
+  averageAge(){
+    let studentAge: number[] = [];
+    let sum: number = 0;
+    studentsList.map(item => {
+      studentAge.push(item.age);
+      console.log(studentAge);
+      sum = sum + item.age; 
+      console.log('sum: ' + sum);
+      console.log('lenght: ' + studentAge.length);
+      console.log('average: ' + Math.floor(sum / studentAge.length));
+      console.log(studentAge);
+    })
+  }
 }
 
