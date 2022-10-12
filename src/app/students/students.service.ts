@@ -1,6 +1,32 @@
 import { Injectable } from '@angular/core';
 
-const studentsList = [
+export interface IstudentsList {
+  address: {
+    geolocation: {
+      lat: string,
+      long: string
+    },
+    city: string,
+    street: string,
+    number: number,
+    zipcode: string
+  },
+  id: number,
+  name: {
+    firstname: string,
+    lastname: string
+  };
+  age: number,
+  email: string,
+  username: string,
+  password: string,
+  phone: string,
+  school: string,
+  class: string,
+  __v: number
+}
+
+const studentsList: IstudentsList[] = [
   {
     "address": {
       "geolocation": {
