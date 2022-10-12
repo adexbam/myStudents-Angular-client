@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { StudentsService } from './students/students.service';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     MatTableModule
   ],
   providers: [StudentsService],
