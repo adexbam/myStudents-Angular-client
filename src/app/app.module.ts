@@ -14,7 +14,7 @@ import { StudentsService } from './students/students.service';
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent
+    StudentsComponent,
   ],
   imports: [
     BrowserModule,
