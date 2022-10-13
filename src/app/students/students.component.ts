@@ -12,13 +12,12 @@ export class StudentsComponent implements OnInit {
   average;
   
   constructor(service: StudentsService) {
-    this.students = service.loadAllStudents();
+    this.students = service.loadAllStudents(service.studentsList);
     this.dataSource = this.students;
     this.average = service.averageAge();
   }
 
-  displayedColumns = ['id', 'name', 'age', 'class', 'email'];
-
+  displayedColumns = ['id', 'firstname', 'lastname', 'age', 'class', 'email'];
   
   ngOnInit(): void {
   }
