@@ -16,7 +16,7 @@ export class StudentsComponent implements OnInit {
   constructor(service: StudentsService) {
     this.students = service.loadAllStudents(this.studentsList);
     this.dataSource = this.students;
-    this.average = service.averageAge(this.studentsList);
+    this.average = service.averageAge(this.students);
   }
 
   displayedColumns = ['id', 'firstname', 'lastname', 'age', 'class', 'email'];

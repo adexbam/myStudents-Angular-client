@@ -16,7 +16,11 @@ describe('StudentsService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should load list of students',  () => {
+  it('should load and return list of all students',  () => {
     expect(service.loadAllStudents(studentsList)).toBe(studentsList);
+  });
+
+  it('should return the average age from list of all students', () => {
+    expect(service.averageAge(studentsList)).toBe(15);
   });
 });

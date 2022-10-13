@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -22,8 +22,9 @@ import { StudentsService } from './students/students.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [StudentsService],
   bootstrap: [AppComponent]
 })
