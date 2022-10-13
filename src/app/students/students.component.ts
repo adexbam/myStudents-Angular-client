@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from './students.service';
+import { ListOfStudents} from './studentList';
 
 @Component({
   selector: 'app-students',
@@ -10,11 +11,12 @@ export class StudentsComponent implements OnInit {
   students;
   dataSource;
   average;
+  studentsList = ListOfStudents;
   
   constructor(service: StudentsService) {
-    this.students = service.loadAllStudents(service.studentsList);
+    this.students = service.loadAllStudents(this.studentsList);
     this.dataSource = this.students;
-    this.average = service.averageAge();
+    this.average = service.averageAge(this.studentsList);
   }
 
   displayedColumns = ['id', 'firstname', 'lastname', 'age', 'class', 'email'];
