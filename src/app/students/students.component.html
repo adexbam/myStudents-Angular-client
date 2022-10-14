@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- <h3>Student table!</h3>
-<ul>
-    <li *ngFor="let student of students">{{student.name.firstname}}</li>
-</ul> -->
+<mat-toolbar color="primary">
+  <span>Students Info</span>
+  <span class="spacer"></span>
+</mat-toolbar>
 
 <table mat-table [dataSource]="students" class="mat-elevation-z8">
     <ng-container matColumnDef="id">

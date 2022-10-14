@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ListOfStudents} from './studentList';
+import { ListOfStudents} from './studentList.component';
 
 import { StudentsService } from './students.service';
 
