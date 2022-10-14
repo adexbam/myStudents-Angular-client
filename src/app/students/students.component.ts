@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StudentsService } from './students.service';
 import { ListOfStudents} from './studentList.component';
 
@@ -15,27 +15,29 @@ export class StudentsComponent implements OnInit {
   dataSource;
   average;
   studentsList = ListOfStudents;
+  capitalizeFirst;
+  message = 'hey I am here'
 
-  
+
   constructor(
-    service: StudentsService,
+    public service: StudentsService,
     public dialog: MatDialog
     ) {
     this.students = service.loadAllStudents(this.studentsList);
     this.dataSource = this.students;
     this.average = service.averageAge(this.students);
-
+    this.capitalizeFirst = service.capitalizeFirst;
   }
 
   displayedColumns = ['id', 'firstname', /*'lastname', 'age', 'class', 'email'*/];
   
   ngOnInit(): void {
+    this.service.setMessage(this.students);
   }
 
-  openStudentDialog(element: any) {
+  openStudentDialog(id: any) {
     let listOfStudents = JSON.stringify(this.students);
-    localStorage.setItem('listOfStudents', listOfStudents);
-    localStorage.setItem('firstname', element);
+    localStorage.setItem('id', id);
     this.dialog.open(StudentDetailsComponent, {
       data: {
         firstname: 'Kevin',

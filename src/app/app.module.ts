@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentsComponent } from './students/students.component';
 import { StudentsService } from './students/students.service';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { StudentDetailsService } from './student-details/student-details.service';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     StudentsService,
+    StudentDetailsService,
     {provide: MAT_DIALOG_DATA, useValue: {}},
     { provide: MatDialogRef, useValue: {} },
   ],
