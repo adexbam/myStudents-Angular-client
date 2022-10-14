@@ -38,8 +38,4 @@ export class StudentsService {
     localStorage.setItem('firstname', element)
     console.log(element)
   }
-
-  openStudentDialog(): void {
-    console.log('yes');
-  }
 }

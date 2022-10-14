@@ -32,10 +32,13 @@ export class StudentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openStudentDialog() {
+  openStudentDialog(element: any) {
+    let listOfStudents = JSON.stringify(this.students);
+    localStorage.setItem('listOfStudents', listOfStudents);
+    localStorage.setItem('firstname', element);
     this.dialog.open(StudentDetailsComponent, {
       data: {
-        animal: 'panda',
+        firstname: 'Kevin',
       },
     });
   }

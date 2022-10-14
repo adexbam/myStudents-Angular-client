@@ -15,7 +15,7 @@
       <td mat-cell *matCellDef="let element">
         <button 
           mat-button 
-          (click)="openStudentDialog()"
+          (click)="openStudentDialog(element.name.firstname)"
           >
           {{(element.name.firstname)}}
         </button>

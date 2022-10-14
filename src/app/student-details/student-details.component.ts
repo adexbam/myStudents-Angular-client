@@ -1,9 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA} from '@angular/material/dialog';
-
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
 
 @Component({
   selector: 'app-student-details',
@@ -12,7 +7,7 @@ export interface DialogData {
 })
 export class StudentDetailsComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  constructor() {}
 
   ngOnInit(): void {
   }
